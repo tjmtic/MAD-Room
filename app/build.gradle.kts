@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.abyxcz.mad_room"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.abyxcz.mad_room"
