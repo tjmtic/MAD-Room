@@ -14,7 +14,7 @@ import net.sqlcipher.database.SupportFactory
     version = 1,
     exportSchema = false
 )
-@TypeConverters(Converters::class)
+@TypeConverters(Converters::class, ListTypeConverter::class)
 abstract class ItemDB : RoomDatabase() {
     abstract fun ItemDao(): ItemDao
 
