@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
 
@@ -13,7 +14,7 @@ import net.sqlcipher.database.SupportFactory
     version = 1,
     exportSchema = false
 )
-
+@TypeConverters(Converters::class)
 abstract class ItemDB : RoomDatabase() {
     abstract fun ItemDao(): ItemDao
 
