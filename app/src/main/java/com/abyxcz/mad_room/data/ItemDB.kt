@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 
 
 @Database(
@@ -21,11 +23,13 @@ abstract class ItemDB : RoomDatabase() {
         fun getInstance(context: Context, password: String): ItemDB {
             val path = context.getDatabasePath("user").absolutePath
             return INSTANCE ?: synchronized(this) {
+                val supportFactory = SupportFactory(SQLiteDatabase.getBytes(password.toCharArray()))
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     ItemDB::class.java,
                     path,
                 )
+                    .openHelperFactory(supportFactory)
                     .build()
                 INSTANCE = instance
                 instance

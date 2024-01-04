@@ -74,4 +74,7 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
 
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //Encryption
+    implementation("net.zetetic:android-database-sqlcipher:4.5.0")
 }
