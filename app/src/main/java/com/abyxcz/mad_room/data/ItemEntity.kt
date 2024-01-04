@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "items")
-data class UserEntity(
+data class ItemEntity(
     @PrimaryKey(autoGenerate = true)
     var pk: Long = 0,
     @SerializedName("_id")
