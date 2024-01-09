@@ -50,6 +50,10 @@ android {
     }
 }
 
+kotlin {
+    jvmToolchain(8)
+}
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
