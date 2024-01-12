@@ -22,7 +22,7 @@ abstract class ItemDB : RoomDatabase() {
         @Volatile
         private var INSTANCE: ItemDB? = null
         fun getInstance(context: Context, password: String): ItemDB {
-            val path = context.getDatabasePath("user").absolutePath
+            val path = context.getDatabasePath("item").absolutePath
             return INSTANCE ?: synchronized(this) {
                 val supportFactory = SupportFactory(SQLiteDatabase.getBytes(password.toCharArray()))
                 val instance = Room.databaseBuilder(
